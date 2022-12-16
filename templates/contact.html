@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block  body %}
+<div class="container my-3">
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="https://source.unsplash.com/1250x600/?bikini-girl" alt="First slide">
+      </div>
+    </div>
+  </div>
+  <form method="post" action ="/about">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="email">Enter your Email address</label>
+      <input type="email" class="form-control" id="email" name ="email" placeholder="name@example.com">
+    </div>
+    
+    <div class="form-group">
+      <label for="text">Your Text</label>
+      <textarea class="form-control" id="textdata" name ="textdata" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+{% endblock body  %}
